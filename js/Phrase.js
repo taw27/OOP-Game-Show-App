@@ -3,8 +3,8 @@
  * Phrase.js */
 
  class Phrase {
-     constructor(){
-         
+     constructor(phrase){
+         this.phrase = phrase.toLowerCase; 
      }
 
      addPhraseToDisplay() {
@@ -13,8 +13,8 @@
 
          for(let i = 0; i < phraseLength; i++){
              const li =  document.createElement("li");
-             li.innerText = this.phrase[i];
 
+             li.innerText = this.phrase[i];
              phraseContainer.appendChild(li);
 
              setPhraseLiClassList(li, this.phrase[i]);
@@ -28,12 +28,5 @@
             phraseLi.classList.add("space");
         }
      }
-
-     set phrase (phraseValue) {
-         this.phraseLowerCase = phraseValue.toLowerCase();
-     }
-
-     get phrase () {
-         return this.phraseLowerCase;
-     }
+     
  }
