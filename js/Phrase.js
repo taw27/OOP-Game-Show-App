@@ -1,0 +1,17 @@
+/* Treehouse FSJS Techdegree
+ * Project 4 - OOP Game App
+ * Phrase.js */
+
+ class Phrase {
+     constructor(){
+         
+     }
+
+     set phrase (phraseValue) {
+         this.phraseLowerCase = phraseValue.toLowerCase();
+     }
+
+     get phrase () {
+         return this.phraseLowerCase;
+     }
+ }
