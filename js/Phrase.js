@@ -16,7 +16,17 @@
              li.innerText = this.phrase[i];
 
              phraseContainer.appendChild(li);
+
+             setPhraseLiClassList(li, this.phrase[i]);
          }
+     }
+
+     setPhraseLiClassList(phraseLi, phraseCharacter){
+        if(/^\w+s$/.test(phraseCharacter)){
+            phraseLi.classList.add("hide", "letter", phraseCharacter);
+        } else if(/^\s+s$/.test(phraseCharacter)){
+            phraseLi.classList.add("space");
+        }
      }
 
      set phrase (phraseValue) {
