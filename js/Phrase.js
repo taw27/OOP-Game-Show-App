@@ -1,10 +1,12 @@
+"use strict";
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Phrase.js */
 
  class Phrase {
      constructor(phrase){
-         this.phrase = phrase.toLowerCase; 
+         this.phrase = phrase.toLowerCase;
+         this.checkLetter = this.checkLetter.bind(this); 
      }
 
      addPhraseToDisplay() {
@@ -27,6 +29,10 @@
         } else if(/^\s+s$/.test(phraseCharacter)){
             phraseLi.classList.add("space");
         }
+     }
+
+     checkLetter(selectedLetter){
+         return this.phrase.includes(selectedLetter);
      }
      
  }
