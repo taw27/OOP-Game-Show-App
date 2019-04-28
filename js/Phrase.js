@@ -5,7 +5,7 @@
 
 class Phrase {
   constructor(phrase) {
-    this.phrase = phrase.toLowerCase;
+    this.phrase = phrase.toLowerCase();
     this.checkLetter = this.checkLetter.bind(this);
     this.showMatchedLetter = this.showMatchedLetter.bind(this);
   }
@@ -20,14 +20,14 @@ class Phrase {
       li.innerText = this.phrase[i];
       phraseContainer.appendChild(li);
 
-      setPhraseLiClassList(li, this.phrase[i]);
+      this.setPhraseLiClassList(li, this.phrase[i]);
     }
   }
 
   setPhraseLiClassList(phraseLi, phraseCharacter) {
-    if (/^\w+s$/.test(phraseCharacter)) {
-      phraseLi.classList.add("hide", "letter", phraseCharacter);
-    } else if (/^\s+s$/.test(phraseCharacter)) {
+    if (/^\w$/.test(phraseCharacter)) {
+      phraseLi.classList.add("show","letter", phraseCharacter);
+    } else if (/^[ ]$/.test(phraseCharacter)) {
       phraseLi.classList.add("space");
     }
   }
