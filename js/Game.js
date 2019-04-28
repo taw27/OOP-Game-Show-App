@@ -9,7 +9,7 @@
          this.phrases = phrases;
          this.activePhrase = null;
      }
-     handleInteraction(){
+     handleInteraction(buttonCharacter){
 
      }
 
