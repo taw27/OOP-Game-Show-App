@@ -1,3 +1,4 @@
+"use strict";
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Game.js */
@@ -9,17 +10,17 @@
          this.activePhrase = null;
      }
      handleInteraction(){
-         
+
      }
 
      getRandomPhrase(){
-         const randomIndex = Math.floor(Math.random() * Math.floor(this.activePhrase.length - 1));
-         return this.activePhrase[randomIndex];
+         const randomIndex = Math.floor(Math.random() * Math.floor(this.phrases.length - 1));
+         return this.phrases[randomIndex];
      }
 
      startGame(){
-         document.querySelector('#overlay').style.display = none;
-         this.activePhrase = getRandomPhrase();
+         document.querySelector('#overlay').style.display = "none";
+         this.activePhrase = this.getRandomPhrase();
          this.activePhrase.addPhraseToDisplay();
     }
  }
