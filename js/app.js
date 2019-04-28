@@ -15,6 +15,11 @@
      document.querySelector("#btn__reset").addEventListener("click", () => {
          const newGame = new Game(phrases);
          newGame.startGame();
+         document.addEventListener("click", (event) => {
+             if(event.target.tageName === "BUTTON"){
+                 newGame.handleInteraction(event.target.innerText);
+             }
+         });
      });
  });
 
