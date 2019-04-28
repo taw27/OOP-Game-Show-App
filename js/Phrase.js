@@ -37,7 +37,7 @@ class Phrase {
   }
 
   showMatchedLetter(selectedLetter) {
-    if (checkLetter(selectedLetter)) {
+    if (this.checkLetter(selectedLetter)) {
       Array.from(document.querySelectorAll(`.${selectedLetter}`)).map(
         letterLi => {
           letterLi.remove("hide");
