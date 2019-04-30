@@ -17,7 +17,7 @@
          newGame.startGame();
          document.addEventListener("click", (event) => {
              if(event.target.tageName === "BUTTON"){
-                 newGame.handleInteraction(event.target.innerText);
+                 newGame.handleInteraction(event.target);
              }
          });
      });
