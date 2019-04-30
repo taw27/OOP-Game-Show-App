@@ -10,14 +10,29 @@
          this.activePhrase = null;
      }
      handleInteraction(buttonElement){
-         if(this.activePhrase.checkLetter(buttonElement.inner)){
-
+        buttonElement.disabled = 'true';
+         if(this.activePhrase.checkLetter(buttonElement.innerText)){
+             buttonElement.classList.add('chosen');
+             this.activePhrase.showMatchedLetter(uttonElement.innerText);
+         } else {
+            buttonElement.classList.add('wrong');
          }
      }
 
      getRandomPhrase(){
          const randomIndex = Math.floor(Math.random() * Math.floor(this.phrases.length - 1));
          return this.phrases[randomIndex];
+     }
+
+     removeLife(){
+         const hearts = document.querySelectorAll('.tries');
+         const numHearts =  hearts.length;
+
+         this.missed ++;
+
+         if(!(this.missed > numHearts)){
+             hearts[numHearts - this.missed].src = `images/lostHeart.png`;
+         }
      }
 
      startGame(){
