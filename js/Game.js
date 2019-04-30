@@ -9,8 +9,10 @@
          this.phrases = phrases;
          this.activePhrase = null;
      }
-     handleInteraction(buttonCharacter){
+     handleInteraction(buttonElement){
+         if(this.activePhrase.checkLetter(buttonElement.inner)){
 
+         }
      }
 
      getRandomPhrase(){
