@@ -33,16 +33,28 @@
          overlay.style.display = "flex";
 
          document.querySelector('#game-over-message').innerText =  checkWin ? "Congratulations!! You have won the game" : "Oops, better luck next time";
-         overlay.classList.remove("start");
+         overlay.classList.remove("start", "win", "lose");
          checkWin ? overlay.classList.add("win") : overlay.classList.add("lose");
 
          this.removePhraseLi();
          this.resetHearts();
+         this.resetKeyBoard();
+         this.missed = 0;
+         this.activePhrase = null;
      }
 
      getRandomPhrase(){
          const randomIndex = Math.floor(Math.random() * Math.floor(this.phrases.length - 1));
          return this.phrases[randomIndex];
+     }
+
+     resetKeyBoard(){
+        Array.from(document.querySelectorAll(`.keyrow button`)).map(
+            button => {
+              button.classList.remove("wrong", "chosen");
+              button.disabled = "false";
+            }
+          );
      }
 
      removeLife(){
