@@ -15,7 +15,7 @@
     }
 
      handleInteraction(buttonElement){
-        buttonElement.disabled = 'true';
+        buttonElement.disabled = true;
          if(this.activePhrase.checkLetter(buttonElement.innerText)){
              buttonElement.classList.add('chosen');
              this.activePhrase.showMatchedLetter(buttonElement.innerText);
@@ -52,7 +52,7 @@
         Array.from(document.querySelectorAll(`.keyrow button`)).map(
             button => {
               button.classList.remove("wrong", "chosen");
-              button.disabled = "false";
+              button.disabled = false;
             }
           );
      }
