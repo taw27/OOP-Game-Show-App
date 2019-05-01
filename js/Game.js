@@ -9,13 +9,19 @@
          this.phrases = phrases;
          this.activePhrase = null;
      }
+
+     checkForWin(){
+        return document.querySelectorAll('#phrase li.hide').length === 0
+    }
+
      handleInteraction(buttonElement){
         buttonElement.disabled = 'true';
          if(this.activePhrase.checkLetter(buttonElement.innerText)){
              buttonElement.classList.add('chosen');
-             this.activePhrase.showMatchedLetter(uttonElement.innerText);
+             this.activePhrase.showMatchedLetter(buttonElement.innerText);
          } else {
             buttonElement.classList.add('wrong');
+            this.removeLife();
          }
      }
 
