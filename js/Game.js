@@ -34,7 +34,7 @@
                 keyButton => {
                     return keyButton.innerText.includes(key);
                 }
-                );
+                )[0];
 
                 this.handleInteraction(correspondingButton);
             } 
