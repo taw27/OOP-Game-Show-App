@@ -34,6 +34,7 @@
          document.querySelector('#game-over-message').innerText = this.checkForWin() ? "Congratulations!! You have won the game" : "Oops, better luck next time";
 
          this.removePhraseLi();
+         this.resetHearts();
      }
 
      getRandomPhrase(){
