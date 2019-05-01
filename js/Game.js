@@ -49,6 +49,8 @@
 
          if(!(this.missed > numHearts)){
              hearts[numHearts - this.missed].src = `images/lostHeart.png`;
+         } else {
+             this.gameOver();
          }
      }
 
