@@ -20,6 +20,12 @@
                  newGame.handleInteraction(event.target);
              }
          });
+
+         document.addEventListener("keydown", (event) => {
+             if(!event.repeat && newGame.activePhrase){
+                 newGame.handlePhysicalKeyboardInteraction(event.key);
+             }
+         })
      });
  });
 

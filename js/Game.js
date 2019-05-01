@@ -35,12 +35,13 @@
                     return keyButton.innerText.includes(key);
                 }
                 )[0];
-                
+
                 if(!correspondingButton.disabled){
                     this.handleInteraction(correspondingButton);
                 }
             } 
      }
+     
      gameOver(){
          const overlay = document.querySelector('#overlay');
          const checkWin = this.checkForWin();
