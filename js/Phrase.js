@@ -4,7 +4,7 @@
   Phrase class to represent a phrase and with methods to interact with the phrase
  */
 class Phrase {
-/* 
+  /* 
     constructor to initialise a phrase object, sets the phrase property to the phrase argument passed in lower case
     and makes necessary method bindings 
  */
@@ -37,7 +37,7 @@ class Phrase {
    */
   setPhraseLiClassList(phraseLi, phraseCharacter) {
     if (/^[a-zA-Z]$/i.test(phraseCharacter)) {
-      phraseLi.classList.add("hide","letter", phraseCharacter);
+      phraseLi.classList.add("hide", "letter", phraseCharacter);
     } else if (/^[ ]$/.test(phraseCharacter)) {
       phraseLi.classList.add("space");
     }
