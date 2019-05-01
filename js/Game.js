@@ -27,6 +27,18 @@
             this.removeLife();
          }
      }
+
+     handlePhysicalKeyboardInteraction(key){
+            if(/[a-z A-Z]/i.test(key)){
+                const correspondingButton = Array.from(document.querySelectorAll(`.key`)).filter(
+                keyButton => {
+                    return keyButton.innerText.includes(key);
+                }
+                );
+
+                this.handleInteraction(correspondingButton);
+            } 
+     }
      gameOver(){
          const overlay = document.querySelector('#overlay');
          const checkWin = this.checkForWin();
