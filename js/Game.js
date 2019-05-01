@@ -19,10 +19,21 @@
          if(this.activePhrase.checkLetter(buttonElement.innerText)){
              buttonElement.classList.add('chosen');
              this.activePhrase.showMatchedLetter(buttonElement.innerText);
+             if(this.checkForWin()){
+
+             }
          } else {
             buttonElement.classList.add('wrong');
             this.removeLife();
          }
+     }
+     gameOver(){
+         const overlay = document.querySelector('#overlay');
+         overlay.style.display = "flex";
+
+         document.querySelector('#game-over-message').innerText = this.checkForWin() ? "Congratulations!! You have won the game" : "Oops, better luck next time";
+
+         this.removePhraseLi();
      }
 
      getRandomPhrase(){
@@ -39,6 +50,15 @@
          if(!(this.missed > numHearts)){
              hearts[numHearts - this.missed].src = `images/lostHeart.png`;
          }
+     }
+
+     removePhraseLi(){
+        Array.from(document.querySelectorAll(`#phrase li`)).map(
+            letterLi => {
+              letterLi.remove();
+            }
+          );
+        }
      }
 
      startGame(){
