@@ -40,8 +40,8 @@ class Phrase {
     if (this.checkLetter(selectedLetter)) {
       Array.from(document.querySelectorAll(`.${selectedLetter}`)).map(
         letterLi => {
-          letterLi.remove("hide");
-          letterLi.add("show");
+          letterLi.classList.remove("hide");
+          letterLi.classList.add("show");
         }
       );
     }
