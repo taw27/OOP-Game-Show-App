@@ -16,7 +16,7 @@
          const newGame = new Game(phrases);
          newGame.startGame();
          document.querySelector("#qwerty").addEventListener("click", (event) => {
-             if(event.target.tageName === "BUTTON"){
+             if(event.target.tagName === "BUTTON"){
                  newGame.handleInteraction(event.target);
              }
          });
