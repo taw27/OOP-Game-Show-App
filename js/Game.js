@@ -41,7 +41,7 @@
                 }
             } 
      }
-     
+
      gameOver(){
          const overlay = document.querySelector('#overlay');
          const checkWin = this.checkForWin();
@@ -51,11 +51,7 @@
          overlay.classList.remove("start", "win", "lose");
          checkWin ? overlay.classList.add("win") : overlay.classList.add("lose");
 
-         this.removePhraseLi();
-         this.resetHearts();
-         this.resetKeyBoard();
-         this.missed = 0;
-         this.activePhrase = null;
+         this.resetForGameOver();
      }
 
      getRandomPhrase(){
@@ -100,6 +96,14 @@
               heartImg.src = `images/liveHeart.png`;
             }
           );
+     }
+
+     resetForGameOver(){
+        this.removePhraseLi();
+        this.resetHearts();
+        this.resetKeyBoard();
+        this.missed = 0;
+        this.activePhrase = null;
      }
 
      startGame(){
