@@ -8,6 +8,8 @@
          this.missed  = 0;
          this.phrases = phrases;
          this.activePhrase = null;
+
+         this.resetForGameOver = this.resetForGameOver.bind(this); // bind this object so that wheen resetForGameOver is called in setTimeOut it behaves as expected
      }
 
      checkForWin(){
@@ -50,7 +52,7 @@
          overlay.classList.remove("start", "win", "lose");
          checkWin ? overlay.classList.add("win") : overlay.classList.add("lose");
 
-         this.resetForGameOver();
+         window.setTimeout(this.resetForGameOver, 800);
      }
 
      getRandomPhrase(){
