@@ -9,7 +9,7 @@
 
 ## Description
 
-A web based game to get familiar with object oriented programming in JavaScript. 
+A web based game to get familiar with object oriented programming in JavaScript
 
 ## Game Mechanics
 
