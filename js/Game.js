@@ -29,7 +29,7 @@
      }
 
      handlePhysicalKeyboardInteraction(key){
-            if(/[a-z A-Z]/i.test(key)){
+            if(/[a-zA-Z]/i.test(key)){
                 const correspondingButton = Array.from(document.querySelectorAll(`.key`)).filter(
                 keyButton => {
                     return keyButton.innerText.includes(key);
