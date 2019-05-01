@@ -20,7 +20,7 @@
              buttonElement.classList.add('chosen');
              this.activePhrase.showMatchedLetter(buttonElement.innerText);
              if(this.checkForWin()){
-
+                 this.gameOver();
              }
          } else {
             buttonElement.classList.add('wrong');
