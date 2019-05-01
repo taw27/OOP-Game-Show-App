@@ -35,8 +35,10 @@
                     return keyButton.innerText.includes(key);
                 }
                 )[0];
-
-                this.handleInteraction(correspondingButton);
+                
+                if(!correspondingButton.disabled){
+                    this.handleInteraction(correspondingButton);
+                }
             } 
      }
      gameOver(){
