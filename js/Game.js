@@ -42,7 +42,7 @@
      }
 
      removeLife(){
-         const hearts = document.querySelectorAll('.tries');
+         const hearts = document.querySelectorAll('img.tries');
          const numHearts =  hearts.length;
 
          this.missed ++;
@@ -61,6 +61,13 @@
             }
           );
         }
+
+     resetHearts() {
+        Array.from(document.querySelectorAll(`img.tries`)).map(
+             heartImg => {
+              heartImg.src = `images/liveHeart.png`;
+            }
+          );
      }
 
      startGame(){
