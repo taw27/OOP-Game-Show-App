@@ -29,10 +29,13 @@
      }
      gameOver(){
          const overlay = document.querySelector('#overlay');
+         const checkWin = this.checkForWin();
          overlay.style.display = "flex";
 
-         document.querySelector('#game-over-message').innerText = this.checkForWin() ? "Congratulations!! You have won the game" : "Oops, better luck next time";
-
+         document.querySelector('#game-over-message').innerText =  checkWin ? "Congratulations!! You have won the game" : "Oops, better luck next time";
+         overlay.classList.remove("start");
+         checkWin ? overlay.classList.add("win") : overlay.classList.add("lose");
+         
          this.removePhraseLi();
          this.resetHearts();
      }
