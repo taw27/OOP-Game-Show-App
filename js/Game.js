@@ -45,8 +45,7 @@
      gameOver(){
          const overlay = document.querySelector('#overlay');
          const checkWin = this.checkForWin();
-         overlay.style.display = "flex";
-
+         overlay.classList.remove('overlay-hide');
          document.querySelector('#game-over-message').innerText =  checkWin ? "Congratulations!! You have won the game" : "Oops, better luck next time";
          overlay.classList.remove("start", "win", "lose");
          checkWin ? overlay.classList.add("win") : overlay.classList.add("lose");
@@ -107,7 +106,7 @@
      }
 
      startGame(){
-         document.querySelector('#overlay').style.display = "none";
+        document.querySelector('#overlay').classList.add('overlay-hide');
          this.activePhrase = this.getRandomPhrase();
          this.activePhrase.addPhraseToDisplay();
     }
