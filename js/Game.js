@@ -35,7 +35,7 @@
          document.querySelector('#game-over-message').innerText =  checkWin ? "Congratulations!! You have won the game" : "Oops, better luck next time";
          overlay.classList.remove("start");
          checkWin ? overlay.classList.add("win") : overlay.classList.add("lose");
-         
+
          this.removePhraseLi();
          this.resetHearts();
      }
@@ -46,7 +46,7 @@
      }
 
      removeLife(){
-         const hearts = document.querySelectorAll('img.tries');
+         const hearts = document.querySelectorAll('li.tries img');
          const numHearts =  hearts.length;
 
          this.missed ++;
@@ -67,7 +67,7 @@
         }
 
      resetHearts() {
-        Array.from(document.querySelectorAll(`img.tries`)).map(
+        Array.from(document.querySelectorAll(`li.tries img`)).map(
              heartImg => {
               heartImg.src = `images/liveHeart.png`;
             }
