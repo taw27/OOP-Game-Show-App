@@ -72,6 +72,8 @@
          overlay.classList.remove("start", "win", "lose");
          checkWin ? overlay.classList.add("win") : overlay.classList.add("lose");
 
+         document.querySelector("#btn__reset").innerText =`Start New Game`;
+
          window.setTimeout(this.resetForGameOver, 800); // so that the game is reset after the overlay message transition finishes
      }
 
