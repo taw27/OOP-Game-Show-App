@@ -25,7 +25,7 @@ class Phrase {
   }
 
   setPhraseLiClassList(phraseLi, phraseCharacter) {
-    if (/^\w$/.test(phraseCharacter)) {
+    if (/^\w$/i.test(phraseCharacter)) {
       phraseLi.classList.add("hide","letter", phraseCharacter);
     } else if (/^[ ]$/.test(phraseCharacter)) {
       phraseLi.classList.add("space");
