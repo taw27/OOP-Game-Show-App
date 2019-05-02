@@ -27,9 +27,9 @@ A web based game to get familiar with object oriented programming in JavaScript
 
 ## Modifications
 
-The following addition design modifications has been made to the starter design provided using CSS and JavaScript
+The following design modifications have been made to the starter design provided using CSS and JavaScript
 
-1. Fade in CSS transition for revealing matched letter
+1. Fade in CSS transition for revealing a matched letter
 2. Green color change for correct onscreen keys
 3. Red color change for incorrect onscreen keys
 4. Slide down and slide up transition for overlay modal
