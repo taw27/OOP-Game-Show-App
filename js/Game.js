@@ -75,6 +75,7 @@ class Game {
     checkWin ? overlay.classList.add("win") : overlay.classList.add("lose");
 
     document.querySelector("#btn__reset").innerText = `Start New Game`;
+    document.querySelector("#btn__reset").disabled = false;
 
     window.setTimeout(this.resetForGameOver, 800); // so that the game is reset after the overlay message transition finishes
   }
@@ -153,6 +154,7 @@ class Game {
       */
   startGame() {
     document.querySelector("#overlay").classList.add("overlay-hide");
+    document.querySelector("#btn__reset").disabled = true;
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
   }
