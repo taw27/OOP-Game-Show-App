@@ -1,16 +1,4 @@
 "use strict";
-
-/* 
-    an array of phrase object to be used by the game
- */
-let phrases = [
-  new Phrase("run around"),
-  new Phrase("take down"),
-  new Phrase("home field advantage"),
-  new Phrase("have other fish to fry"),
-  new Phrase("pay off")
-];
-
 /* 
     waits till the dom content has been loaded
   */
@@ -20,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
            for the onscreen and physical key buttons to handle the game
          */
   document.querySelector("#btn__reset").addEventListener("click", () => {
-    const newGame = new Game(phrases);
+    const newGame = new Game();
     newGame.startGame();
     document.querySelector("#qwerty").addEventListener("click", event => {
       if (event.target.tagName === "BUTTON" && newGame.activePhrase) {
